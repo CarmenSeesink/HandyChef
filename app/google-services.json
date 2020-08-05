@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "809346650740",
+    "firebase_url": "https://handychef-6026a.firebaseio.com",
+    "project_id": "handychef-6026a",
+    "storage_bucket": "handychef-6026a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:809346650740:android:d3ecd59fd126b9443e3721",
+        "android_client_info": {
+          "package_name": "com.example.handychef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "809346650740-gl36770ksnoapjvnijqbciia36vjk5fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJjnOBTQsWDonERFMo3KDhnUb7g6UQGVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "809346650740-gl36770ksnoapjvnijqbciia36vjk5fv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
