@@ -18,7 +18,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View? {g
         // Inflate the layout for this fragment
         auth = Firebase.auth
 
@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
             val firebaseUser = firebaseAuth.currentUser
             if (firebaseUser == null) {
                 Log.d("Authentication", "This user is not logged in")
-                findNavController().navigate(R.id.action_homeFragment_to_registerFragment)
+                findNavController().navigate(R.id.loginFragment)
             }
         }
 
