@@ -14,68 +14,66 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="100dp">
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:text="Title"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+            android:layout_height="133dp">
 
             <TextView
                 android:id="@+id/body"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Body"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/timeStamp"
-                app:layout_constraintEnd_toEndOf="@+id/title"
-                app:layout_constraintStart_toStartOf="@+id/title"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                android:text="Body"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/medium"
+                android:textSize="10sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/imageView"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView"/>
 
             <TextView
-                android:id="@+id/steps"
+                android:id="@+id/title"
+                android:textColor="@color/colorBlack"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Steps"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:textSize="14sp"
+                android:text="Title"
+                android:fontFamily="@font/bold"
+                android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@+id/timeStamp"
-                app:layout_constraintEnd_toEndOf="@+id/title"
-                app:layout_constraintStart_toStartOf="@+id/title"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                app:layout_constraintEnd_toEndOf="@+id/body"
+                app:layout_constraintStart_toStartOf="@+id/body"
+                app:layout_constraintTop_toBottomOf="@+id/body" />
 
             <TextView
                 android:id="@+id/timeStamp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
                 android:text="12 July 2020"
-                android:textSize="12sp"
+                android:textColor="@color/colorGray"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
                 app:layout_constraintEnd_toEndOf="@+id/title"
-                app:layout_constraintHorizontal_bias="0.517"
-                app:layout_constraintStart_toStartOf="@+id/body" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/body"
+                app:layout_constraintTop_toBottomOf="@+id/body"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="76dp"
-                android:layout_height="76dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_launcher_background"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_launcher_background"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

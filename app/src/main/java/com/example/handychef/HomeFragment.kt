@@ -1,5 +1,6 @@
 package com.example.handychef
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -69,6 +70,18 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_addRecipeFragment)
         }
 
+//        binding.breakfast.setOnClickListener {
+//            db.collectionGroup("recipe").whereEqualTo("body", "Breakfast").get()
+//                .addOnSuccessListener {
+//                    for (recipe in it) {
+//                        val resultRecipeItem = recipe.toObject<RecipePost>()
+//                        resultRecipeItem.id = recipe.id
+//                        Log.d("RecipeItem", "${resultRecipeItem}")
+//                        adapter.add(RecipeItem(resultRecipeItem))
+//                    }
+//                }
+//        }
+
         return binding.root
 
     }
@@ -79,7 +92,6 @@ class RecipeItem(val recipeItem: RecipePost) : Item(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         viewHolder.title.text = recipeItem.title
         viewHolder.body.text = recipeItem.body
-        viewHolder.steps.text = recipeItem.steps
         viewHolder.timeStamp.text = recipeItem.timestamp.toDate().toString()
         if(recipeItem.headerImageUrl != "" && recipeItem.headerImageUrl.isNotEmpty()){
             Picasso.get().load(recipeItem.headerImageUrl).fit().centerCrop().into(viewHolder.imageView)
