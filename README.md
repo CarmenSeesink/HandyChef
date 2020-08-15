@@ -5,7 +5,7 @@
 </br>
    
   <a href="https://github.com/CarmenSeesink/HandyChef ">
-    <img src="Images/logo.png" alt="Logo" width="140" height="140">
+    <img src="images/logo.png" alt="Logo" width="140" height="140">
   </a>
   
   <h3 align="center">HandyChef</h3>
@@ -66,8 +66,6 @@ Open and run the project in Android Studio.
 <!-- FEATURES AND FUNCTIONALITY-->
 ## Features and Functionality
 
-![image2][image2]
-
 ### Choose categories
 
 Choose between a wide range of categories - breakfast to dessert.
@@ -76,7 +74,7 @@ Choose between a wide range of categories - breakfast to dessert.
 
 View recipes with the click of a button.
 
-![image3][image3] 
+![image2][image2]
 
 ### Add your own recipe
 
@@ -109,9 +107,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Firebase guide](https://firebase.google.com/docs/guides)
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[image1]: Images/image1.png
-[image2]: Images/image2.png
-[image3]: Images/image3.png
+[image1]: images/1.png
+[image2]: images/2.png
+
 
 
 
