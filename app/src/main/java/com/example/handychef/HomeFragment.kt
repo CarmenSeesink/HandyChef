@@ -13,7 +13,9 @@ import com.example.handychef.data.RecipePost
 import com.example.handychef.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentChange
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.MetadataChanges
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -23,6 +25,7 @@ import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 
 import kotlinx.android.synthetic.main.fragment_all_recipe_item.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -39,6 +42,7 @@ class HomeFragment : Fragment() {
         auth = Firebase.auth
         db = Firebase.firestore
         var adapter = GroupAdapter<GroupieViewHolder>()
+
         binding.allRecipeRecyclerView.adapter = adapter
 
         adapter.setOnItemClickListener { item, view ->
@@ -57,6 +61,40 @@ class HomeFragment : Fragment() {
                     adapter.add(RecipeItem(resultRecipeItem))
                 }
             }
+//
+//        db.collection("recipes").whereEqualTo("body", "breakfast")
+//            .addSnapshotListener(MetadataChanges.INCLUDE) { querySnapshot, e ->
+//                if (e != null) {
+//                    Log.w(TAG, "Listen error", e)
+//                    return@addSnapshotListener
+//                }
+//                for (recipe in querySnapshot!!.documentChanges) {
+//                    if (recipe.type == DocumentChange.Type.ADDED) {
+//                        val resultRecipeItem = recipe.toObject<RecipePost>()
+//                        resultRecipeItem.id = recipe.id
+//                        Log.d("RecipeItem", "${resultRecipeItem}")
+//                        adapter.add(RecipeItem(resultRecipeItem))
+//                    }
+//                    val source = if (querySnapshot.metadata.isFromCache)
+//                        "local cache"
+//                    else
+//                        "server"
+//                }
+//            }
+
+//        db.collectionGroup("recipes").whereEqualTo("body", "Breakfast").get()
+//            .addOnSuccessListener {
+//                Log.d("Success","${it}")
+//                for (recipe in it) {
+//                    val resultRecipeItem = recipe.toObject<RecipePost>()
+//                    resultRecipeItem.id = recipe.id
+//                    Log.d("RecipeItem", "${resultRecipeItem}")
+//                    adapter.add(RecipeItem(resultRecipeItem))
+//                }
+//            }
+//            .addOnFailureListener{
+//                Log.d("Home","${it}")
+//            }
 
         auth.addAuthStateListener { firebaseAuth ->
             val firebaseUser = firebaseAuth.currentUser
@@ -70,16 +108,49 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_addRecipeFragment)
         }
 
-//        binding.breakfast.setOnClickListener {
-//            db.collectionGroup("recipe").whereEqualTo("body", "Breakfast").get()
-//                .addOnSuccessListener {
-//                    for (recipe in it) {
-//                        val resultRecipeItem = recipe.toObject<RecipePost>()
-//                        resultRecipeItem.id = recipe.id
-//                        Log.d("RecipeItem", "${resultRecipeItem}")
-//                        adapter.add(RecipeItem(resultRecipeItem))
-//                    }
-//                }
+        binding.breakfast.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_breakfastFragment)
+        }
+
+        binding.lunch.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_lunchFragment)
+        }
+
+        binding.dinner.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_dinnerFragment)
+        }
+
+        binding.dessert.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_dessertFragment)
+        }
+////            db.collectionGroup("recipes").whereEqualTo("body", "Breakfast").get()
+////                .addOnSuccessListener {
+////                    for (recipe in it) {
+////                        val resultRecipeItem = recipe.toObject<RecipePost>()
+////                        resultRecipeItem.id = recipe.id
+////                        Log.d("RecipeItem", "${resultRecipeItem}")
+////                        adapter.add(RecipeItem(resultRecipeItem))
+////                    }
+////                }
+//            db.collection("recipes")
+//                .orderBy("body")
+//                .startAt("Breakfast")
+//        }
+
+//        binding.lunch.setOnClickListener {
+////            db.collectionGroup("recipes").whereEqualTo("body", "Lunch").get()
+////                .addOnSuccessListener {
+////                    for (recipe in it){
+////                        val resultRecipeItem = recipe.toObject<RecipePost>()
+////                        resultRecipeItem.id = recipe.id
+////                        Log.d("Lunch", "${it}")
+////                        adapter.add(RecipeItem(resultRecipeItem))
+////                    }
+////                }
+//
+//            db.collection("recipes")
+//                .orderBy("body")
+//                .startAt("Lunch")
 //        }
 
         return binding.root
@@ -100,3 +171,5 @@ class RecipeItem(val recipeItem: RecipePost) : Item(){
 
     override fun getLayout(): Int = R.layout.fragment_all_recipe_item
 }
+
+

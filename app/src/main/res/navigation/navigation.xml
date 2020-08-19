@@ -22,6 +22,18 @@
         <action
             android:id="@+id/action_homeFragment_to_recipeDetailFragment"
             app:destination="@id/recipeDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_breakfastFragment"
+            app:destination="@id/breakfastFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_lunchFragment"
+            app:destination="@id/lunchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dinnerFragment"
+            app:destination="@id/dinnerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dessertFragment"
+            app:destination="@id/dessertFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -69,5 +81,107 @@
         <argument
             android:name="recipeId"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakfastFragment"
+        android:name="com.example.handychef.BreakfastFragment"
+        android:label="fragment_breakfast"
+        tools:layout="@layout/fragment_breakfast" >
+        <action
+            android:id="@+id/action_breakfastFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
+        <action
+            android:id="@+id/action_breakfastFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+        <action
+            android:id="@+id/action_breakfastFragment_to_lunchFragment"
+            app:destination="@id/lunchFragment" />
+        <action
+            android:id="@+id/action_breakfastFragment_to_dinnerFragment"
+            app:destination="@id/dinnerFragment" />
+        <action
+            android:id="@+id/action_breakfastFragment_to_dessertFragment"
+            app:destination="@id/dessertFragment" />
+        <action
+            android:id="@+id/action_breakfastFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lunchFragment"
+        android:name="com.example.handychef.LunchFragment"
+        android:label="fragment_lunch"
+        tools:layout="@layout/fragment_lunch" >
+        <action
+            android:id="@+id/action_lunchFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+        <action
+            android:id="@+id/action_lunchFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
+        <action
+            android:id="@+id/action_lunchFragment_to_breakfastFragment"
+            app:destination="@id/breakfastFragment" />
+        <action
+            android:id="@+id/action_lunchFragment_to_dinnerFragment"
+            app:destination="@id/dinnerFragment" />
+        <action
+            android:id="@+id/action_lunchFragment_to_dessertFragment"
+            app:destination="@id/dessertFragment" />
+        <action
+            android:id="@+id/action_lunchFragment_to_dinnerFragment2"
+            app:destination="@id/dinnerFragment" />
+        <action
+            android:id="@+id/action_lunchFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dinnerFragment"
+        android:name="com.example.handychef.DinnerFragment"
+        android:label="fragment_dinner"
+        tools:layout="@layout/fragment_dinner" >
+        <action
+            android:id="@+id/action_dinnerFragment_to_lunchFragment"
+            app:destination="@id/lunchFragment" />
+        <action
+            android:id="@+id/action_dinnerFragment_to_breakfastFragment"
+            app:destination="@id/breakfastFragment" />
+        <action
+            android:id="@+id/action_dinnerFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+        <action
+            android:id="@+id/action_dinnerFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
+        <action
+            android:id="@+id/action_dinnerFragment_to_lunchFragment2"
+            app:destination="@id/lunchFragment" />
+        <action
+            android:id="@+id/action_dinnerFragment_to_dessertFragment"
+            app:destination="@id/dessertFragment" />
+        <action
+            android:id="@+id/action_dinnerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dessertFragment"
+        android:name="com.example.handychef.DessertFragment"
+        android:label="fragment_dessert"
+        tools:layout="@layout/fragment_dessert" >
+        <action
+            android:id="@+id/action_dessertFragment_to_dinnerFragment"
+            app:destination="@id/dinnerFragment" />
+        <action
+            android:id="@+id/action_dessertFragment_to_breakfastFragment"
+            app:destination="@id/breakfastFragment" />
+        <action
+            android:id="@+id/action_dessertFragment_to_lunchFragment"
+            app:destination="@id/lunchFragment" />
+        <action
+            android:id="@+id/action_dessertFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+        <action
+            android:id="@+id/action_dessertFragment_to_addRecipeFragment"
+            app:destination="@id/addRecipeFragment" />
+        <action
+            android:id="@+id/action_dessertFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
